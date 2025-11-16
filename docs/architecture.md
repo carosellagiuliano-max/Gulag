@@ -7,7 +7,7 @@ SCHNITTWERK by Vanessa Carosella ist eine moderne Salon-Plattform auf Basis von 
 - Von Anfang an erweiterbar für weitere Standorte
 - Klar dokumentierte Basis, damit spätere Phasen (Datenbank, Auth, Admin) anschließen können
 
-## Stack (Phase 0–4)
+## Stack (Phase 0–7)
 - **Next.js 16** mit TypeScript und App Router
 - **Tailwind CSS 3** für Design Tokens & Utility Styling
 - **shadcn/ui (New York, neutral)** als Komponentenbasis (Button, Card, Badge, Input, Select, Dialog, Sheet, Toast, Skeleton)
@@ -15,6 +15,7 @@ SCHNITTWERK by Vanessa Carosella ist eine moderne Salon-Plattform auf Basis von 
 - **Supabase (Postgres + Auth)** mit Schema, RLS, Opening-Hours-Tabelle und Trigger-basierter Verknüpfung von Auth-Usern mit Profil/Customer/Staff
 - **@supabase/supabase-js** für serverseitig gecachte Marketing-Daten (Salon, Services, Öffnungszeiten) mit Fallback-Daten, falls kein Key gesetzt ist und für clientseitige Auth/Booking-Interaktionen
 - **Supabase Auth** mit Browser-Client für Login/Registration, Session-Persistenz und Termin-Speicherung über RLS
+- **Vitest** für schnelle Unit-Tests der Geschäftslogik (Booking-Regeln, Voucher, Loyalty)
 
 ## Projektstruktur
 - `src/app` – Routen, Layouts und Seiten (App Router)
@@ -39,3 +40,6 @@ SCHNITTWERK by Vanessa Carosella ist eine moderne Salon-Plattform auf Basis von 
 - **Phase 5**: Shop-Listing erweitern und Checkout mit Stripe (Testmodus), Bestellmodell und Historie.
 - **Phase 6**: Admin-Portal (Services/Staff, Kalender, Kunden, Produkte/Stock, Settings, Notifications) mit RBAC.
 - **Phase 7**: Hardening, Analytics, Tests und UX-Politur.
+  - Analytics-Übersicht mit Umsatz (30 Tage), Warenkorb, Wiederbuchungsrate, Consent-Quote, Low-Stock-Hinweisen und Bestelltabelle.
+  - Fehlertoleranz im Admin-Bereich über Loading/Error-Boundaries.
+  - Domain-Tests für Booking-Regeln, Voucher-Einlösung und Loyalty-Tiering via Vitest.
