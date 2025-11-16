@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 30 50% 98%;
+  --foreground: 24 10% 12%;
+  --card: 0 0% 100%;
+  --card-foreground: 24 10% 12%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 24 10% 12%;
+  --primary: 25 66% 45%;
+  --primary-foreground: 33 62% 98%;
+  --secondary: 27 32% 94%;
+  --secondary-foreground: 24 10% 20%;
+  --muted: 27 32% 94%;
+  --muted-foreground: 24 10% 40%;
+  --accent: 17 39% 92%;
+  --accent-foreground: 24 10% 15%;
+  --destructive: 0 70% 50%;
+  --destructive-foreground: 33 62% 98%;
+  --border: 25 22% 90%;
+  --input: 25 22% 90%;
+  --ring: 25 66% 45%;
+  --radius: 0.75rem;
+  --brand: 25 66% 45%;
+  --brand-foreground: 33 62% 98%;
+  --brand-muted: 25 30% 92%;
+}
+
+.dark {
+  --background: 24 10% 8%;
+  --foreground: 33 62% 98%;
+  --card: 24 10% 10%;
+  --card-foreground: 33 62% 98%;
+  --popover: 24 10% 8%;
+  --popover-foreground: 33 62% 98%;
+  --primary: 25 66% 60%;
+  --primary-foreground: 24 10% 10%;
+  --secondary: 24 10% 14%;
+  --secondary-foreground: 33 62% 98%;
+  --muted: 24 10% 14%;
+  --muted-foreground: 25 20% 70%;
+  --accent: 25 20% 18%;
+  --accent-foreground: 33 62% 98%;
+  --destructive: 0 62% 55%;
+  --destructive-foreground: 33 62% 98%;
+  --border: 24 10% 18%;
+  --input: 24 10% 18%;
+  --ring: 25 66% 60%;
+  --brand: 25 66% 60%;
+  --brand-foreground: 24 10% 10%;
+  --brand-muted: 24 10% 18%;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-sans);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight text-foreground;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

@@ -1,0 +1,2 @@
+export const DEFAULT_SALON_ID = "11111111-1111-1111-1111-111111111111";
+export const DEFAULT_TIMEZONE = "Europe/Zurich";
