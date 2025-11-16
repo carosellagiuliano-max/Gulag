@@ -55,6 +55,11 @@ The Phase-4 Booking-Flow läuft vollständig über den Supabase-Browser-Client u
 - Order items are readable to authenticated users only if the parent order is visible to them.
 - `service_role` policy for full control; server actions use the service key to create orders and adjust stock before invoking Stripe Checkout.
 
+### Phase-7 Hardening-Notizen
+- Admin-Analytics lesen aggregierte Daten serverseitig über den Service-Client; ohne Service-Key werden Demo-Daten angezeigt und eine Warnung ausgegeben.
+- Booking-, Voucher- und Loyalty-Regeln sind als reine Functions abgebildet und via Vitest getestet, um Regressionsschutz für Kern-Policies zu haben.
+- Admin-Routen besitzen Loading- und Error-Boundaries, damit Fehlzustände keinen sensiblen Stacktrace im Browser zeigen.
+
 ## Operational guidance
 - Migration `0002_auth_linking.sql` installs a trigger on `auth.users` that upserts the profile/customer/staff rows automatically
   based on `raw_user_meta_data` (e.g., `full_name`, `phone`, `preferred_language`, `marketing_consent`, `staff_role`).
